@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "A Raspberry Pi vehicle dashboard web application using React and SocketCAN.",
+  "main": "index.js",
+  "scripts": {
+    "start-backend": "npm start --prefix backend",
+    "start-frontend": "npm run dev --prefix frontend",
+    "dev": "npm-run-all -l --parallel start-backend start-frontend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules
+npm_output.log
+vite_output.log
+frontend/npm_output.log

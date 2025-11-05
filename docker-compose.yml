@@ -1,7 +1,10 @@
-version: '3'
 services:
   backend:
     build: ./backend
+    network_mode: "host"
+    devices:
+      - "/dev/can0:/dev/can0"
+    privileged: true
     ports:
       - '3001:3001'
     volumes:

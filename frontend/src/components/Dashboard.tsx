@@ -8,6 +8,10 @@ const Dashboard: React.FC = () => {
   const [data, setData] = useState<any>({});
 
   useEffect(() => {
+    socket.on('connect_error', (err) => {
+      console.error('Socket connection error:', err.message);
+    });
+
     socket.on('can-data', (newData) => {
       setData((prevData: any) => ({
         ...prevData,
@@ -17,6 +21,7 @@ const Dashboard: React.FC = () => {
 
     return () => {
       socket.off('can-data');
+      socket.off('connect_error');
     };
   }, []);
 

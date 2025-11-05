@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import Gauge from './Gauge';
 
-const socket = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:3001');
+const socket = io(`${window.location.protocol}//${window.location.hostname}:3001`);
 
 const Dashboard: React.FC = () => {
   const [data, setData] = useState<any>({});
